@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block title %}每日一文{% endblock %}
+{% block mid %}
+    {% include "md_content/"+filename+".html" %}
+{% endblock %}
+{% block footer %}
+    <a id="RETURN" href="/mryw/{{ grade }}/{{ vacation }}">返回目录</a>
+{% endblock %}

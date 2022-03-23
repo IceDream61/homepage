@@ -1,0 +1,247 @@
+#pay_qrcode1 {
+  width: 180px;
+  height: 180px;
+  box-shadow: 4px 4px 4px #888888;
+  margin: 0 auto;
+}
+
+#pay_qrcode2 {
+  width: 180px;
+  height: 180px;
+  box-shadow: -4px -4px 4px #888888;
+}
+
+#pay_qrcode3 {
+  width: 180px;
+  height: 180px;
+  box-shadow: 4px -4px 4px #888888;
+}
+
+#pay_qrcode4 {
+  width: 180px;
+  height: 180px;
+  box-shadow: -4px 4px 4px #888888;
+}
+
+ul.headbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li.headbar {
+  float: left;
+}
+
+li.headbar p {
+  display: block;
+  color: #9d9d9d;
+  text-align: center;
+  margin: 0px;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li.headbar input {
+  display: block;
+  color: #9d9d9d;
+  background-color: #333;
+  border: none;
+  font-size: 16px;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+li.headbar a {
+  display: block;
+  color: #9d9d9d;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* TODO ALERT*移出base.css */
+#ALERT {
+  display: block;
+  color: #e6560f;
+  text-align: right;
+  padding: 14px 16px;
+  text-decoration: none;
+  position: fixed;
+  top: 60px;
+  right: 0px;
+  background-color: #d6d6d6;
+  /* background-color: #cccccc; */
+  font-weight: normal;
+}
+
+#ALERT_LOGIN {
+  color: #ad7899;
+  font-weight: bold;
+}
+
+#ALERT_SPACE {
+  float: left;
+}
+
+/* li a:hover:not(.active) { */
+li.headbar a:hover {
+  color: #ffffff;
+}
+
+li.headbar input:hover {
+  color: #ffffff;
+}
+
+body {
+  margin: 0px;
+}
+
+#wrapbox {
+  width: 300px;
+  height: 312px;
+  /* border: solid rgb(238, 238, 238) 2px; */
+  background-color: white;
+  margin: auto;
+  position: absolute;
+  z-index: 1;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  display: none;
+}
+
+.wrap #title {
+  margin-top: 36px;
+  margin-bottom: 16px;
+  font-size: 20px;
+  color: rgb(51 51 51);
+  text-align: center;
+}
+
+.wrap .tab {
+  color: #9d9d9d;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.wrap #infor {
+  text-align: center;
+  color: #666;
+  font-size: 16px;
+  margin-bottom: 36px;
+}
+
+.wrap #infor a {
+  text-decoration: none;
+  color: #3481cf;
+}
+
+.wrap #form {
+  text-align: center;
+  height: 150px;
+  width: 272px;
+  margin: 0px auto;
+}
+
+.wrap #form .input {
+  height: 38px;
+  width: 168px;
+  box-sizing: border-box;
+  padding: 10px;
+  padding-right: 0px;
+  margin-bottom: 17px;
+  border-radius: 3px;
+  border: solid rgb(214 214 214) 1px;
+}
+
+.wrap #form .button {
+  border-radius: 3px;
+  height: 37px;
+  width: 154px;
+  padding: 1px 7px 2px 7px;
+  box-sizing: content-box;
+  border: none;
+  background-color: rgb(102, 175, 233);
+  color: white;
+  font-size: 17px;
+}
+
+#overlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: rgba(0, 0, 0, 0.2);
+  display: none;
+}
+
+#container {
+  display: grid;
+  /* grid-template-columns: auto 800px auto; */
+  grid-template-columns: minmax(30px, auto) minmax(0, 800px) minmax(30px, auto);
+  grid-template-rows: 0px minmax(630px, auto) 70px;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  grid-template-areas:
+    "option title account"
+    "left-title mid-title right-title"
+    "left mid right"
+    "footer footer footer";
+  /* justify-items: center; */
+  /* align-items: start; */
+}
+
+/* .item-4 { */
+/*   font-size: 2em; */
+/*   text-align: center; */
+/*   border: 1px solid #e5e4e9; */
+/* } */
+/* .item-5 { */
+/*   font-size: 2em; */
+/*   text-align: center; */
+/*   border: 1px solid #e5e4e9; */
+/* } */
+/* .item-6 { */
+/*   font-size: 2em; */
+/*   text-align: center; */
+/*   border: 1px solid #e5e4e9; */
+/* } */
+/*  */
+/* .item-7 { */
+/*   font-size: 2em; */
+/*   text-align: center; */
+/*   border: 1px solid #e5e4e9; */
+/* } */
+/*  */
+/* .item-9 { */
+/*   font-size: 2em; */
+/*   text-align: center; */
+/*   border: 1px solid #e5e4e9; */
+/* } */
+/*  */
+/* .item-10 { */
+/*   [> font-size: 2em; <] */
+/*   text-align: center; */
+/*   [> justify-items: center; <] */
+/*   border: 1px solid #e5e4e9; */
+/*   justify-items: center; */
+/*   align-items: center; */
+/*  */
+/*   grid-column-start: 1; */
+/*   grid-column-end: 4; */
+/*   [> [> background-color: #b5a87f; <] <] */
+/* } */
+/*  */
+/* [> TODO 移出base.css <] */
+/* #RETURN { */
+/*   color: #8064a9; */
+/*   font-size: 30px; */
+/* } */

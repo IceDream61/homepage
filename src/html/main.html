@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}icedream61's homepage{% endblock %}
+{% block more_static_files %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}" />
+  <script type="text/javascript" src="{{ url_for('static', filename='js/base.js') }}"></script>
+{% endblock %}
+
+{% block mid %}
+  <h1>欢迎来到 icedream61 的小网站~</h1>
+{% endblock %}

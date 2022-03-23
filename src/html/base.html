@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>{% block title %}{% endblock %}</title>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/md5.min.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}" />
+    <script type="text/javascript" src="{{ url_for('static', filename='js/base.js') }}"></script>
+    {% block more_static_files %}{% endblock %}
+    {# TODO 允许自选md和code主题 #}
+    <link href="{{ url_for('static', filename='css/purple.css') }}" rel="stylesheet" />
+    <link href="{{ url_for('static', filename='css/prism.css') }}" rel="stylesheet" />
+  </head>
+  <body>
+    <ul class="headbar">
+      <li class="headbar"><a href="/activity"><b>高考志愿填报活动</b></a></li>
+      {% if status==1 %}
+      <li class="headbar" style="float: right">
+        <form action="/logout" method="post">
+          <input type="submit" value="登出" />
+        </form>
+      </li>
+      <li class="headbar" id="debugAction" style="float: right">
+        <p>
+          状态： {% if action=="Login" %} 已登录 {% else %} 注册成功 {% endif %}
+        </p>
+      </li>
+      <li class="headbar" style="float: right">
+          <a href="/infos">用户：{{ username }}</a>
+      </li>
+      {% else %}
+      <li class="headbar" style="float: right">
+        <a id="active" href="javascript:displayLoginDiv()"><b>登录</b></a>
+      </li>
+      {% endif %}
+    </ul>
+    {% if status!=1 %}
+    <div class="wrap" id="wrapbox">
+      <div class="wrap" id="title">
+        <p class="wrap tab">登录 / 注册</p>
+      </div>
+      <form class="wrap" action="/login" method="post" id="form" onsubmit="onLogin()">
+        <input
+          id="login_nickname"
+          class="wrap input"
+          type="text"
+          name="nick_name"
+          placeholder="昵称"
+        />
+        <input
+          id="login_password"
+          class="wrap input"
+          type="password"
+          name="password"
+          placeholder="密码"
+        />
+        <button class="wrap button" type="submit">登 录</button>
+      </form>
+    </div>
+    {% endif %}
+    <div id="overlay"></div>
+    <div id="container">
+      <div class="item item-4">
+        {% block left_title %}{% endblock %}
+      </div>
+      <div class="item item-5">
+        {% block mid_title %}{% endblock %}
+      </div>
+      <div class="item item-6">
+        {% block right_title %}{% endblock %}
+      </div>
+      <div class="item item-7">
+        {% block left %}{% endblock %}
+      </div>
+      <div class="item item-8">
+        {% block mid %}{% endblock %}
+      </div>
+      <div class="item item-9">
+        {% block right %}{% endblock %}
+      </div>
+      <div class="item item-10">
+        {% block footer %}{% endblock %}
+      </div>
+      {% if status!=1 %}
+        {% block login_alert %}{% endblock %}
+      {% endif %}
+    </div>
+    {# TODO 允许自选code主题 #}
+    <script src="{{ url_for('static', filename='js/prism.js') }}"></script>
+    {# TODO 处理不清不楚的MathJax现状 #}
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"
+      async
+    ></script>
+  </body>
+</html>

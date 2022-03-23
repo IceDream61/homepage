@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}问卷结果{% endblock %}
+{% block more_static_files %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}" />
+  <script type="text/javascript" src="{{ url_for('static', filename='js/base.js') }}"></script>
+{% endblock %}
+
+{% block mid %}
+  {% include "md_content/"+filename+".html" %}
+{% endblock %}
